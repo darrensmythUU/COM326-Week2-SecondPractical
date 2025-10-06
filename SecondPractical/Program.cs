@@ -1,16 +1,33 @@
-﻿class Program
+﻿/* Practical 2
+ * Information: Methods Demo
+ * Version 1
+ * Author: Darren Smyth
+ * Date: October 6th 2026
+ */
+
+class Program
 {
     public static void Main(string[] args)
     {
         int option = 0;
-        PrintMenu();
-        option = InputOption(option);
-        GetMessage(option);
+        bool exitBoolean = false;
+        do
+        {
+            PrintMenu();
+            option = InputOption(option);
+            GetMessage(option);
+
+            if (option == 0)
+            {
+                exitBoolean = true;
+            }
+        } while (!exitBoolean);
     }
 
     private static void PrintMenu()
     {
         // Prints a menu which allows the user to see the below options
+        Console.WriteLine("----------------------------------------");
         Console.WriteLine("Please enter a valid option from below: ");
         Console.WriteLine("1. Hello in French?");
         Console.WriteLine("2. Hello in Spanish?");
